@@ -1,0 +1,366 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    height: 100%;
+    width: 100%;
+   background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+
+
+    background-image: url("backgroundMagazine.png");
+}
+#root {
+    position: relative;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    animation: 1s ease-in displayDiv;
+
+
+}
+
+@keyframes displayDiv {
+    0%{
+        clip-path: circle(140% at 100% 100%);
+    }
+    60%{
+        clip-path: circle(0% at 100% 100%);
+    }
+
+
+
+
+}
+
+@keyframes LeftDiv {
+    0%{ position: absolute;
+        left: 130%;
+
+    }
+    100%{
+        position: absolute;
+    left: 0%;
+    }
+
+
+}
+@keyframes preLeftDiv {
+    0%{
+        width: 30%;
+
+    }
+    100%{
+        width: 72%;
+
+    }
+
+
+}
+@keyframes RightDiv {
+    0%{ position: absolute;
+        right: 140%;
+
+    }
+    100%{
+        position: absolute;
+        right: 0%;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+.main-div {
+    position: relative;
+    background-color: transparent;
+    display: flex;
+    overflow: hidden;
+    width: 70%;
+    border-radius: 10vh;
+    height: 65vh;
+
+
+
+
+
+
+}
+.left-div {
+    display: flex;
+    justify-items: center;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    position: relative;
+    background-image: linear-gradient(to right, palegoldenrod, peachpuff);
+    height: 100%;
+    width: 100%;
+    animation-name: LeftDiv;
+    animation-duration: 3s ;
+    animation-delay: 0.5s;
+    border-radius: 10vh 1vh 1vh 10vh;
+
+
+}
+.dot1{
+    transition: 1s;
+    position: absolute;
+    top: 25%;
+    left: 52%;
+    transform: scale(0);
+    clip-path: ellipse(11% 40% at 50% 50%);
+    background-color: white;
+    width: 10%;
+    height: 10%;
+
+}
+.dot2{
+    transition: 1s;
+    position: absolute;
+    top: 30%;
+    left: 47%;
+    transform: scale(0) rotateZ(-45deg);
+    clip-path: ellipse(11% 40% at 50% 50%);
+    background-color: white;
+    width: 10%;
+    height: 10%;
+
+}
+.dot3{
+    transition: 1s;
+    position: absolute;
+    top: 30%;
+    left: 57%;
+    transform: scale(0) rotateZ(45deg);
+
+    clip-path: ellipse(11% 40% at 50% 50%);
+    background-color: white;
+    width: 10%;
+    height: 10%;
+
+}
+
+.psevdo-left-div{
+    animation-name: preLeftDiv;
+    animation-duration: 2s ;
+    animation-delay: 0.5s;
+
+    border-radius: 10vh 1vh 1vh 10vh;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 72%;
+    margin-right: 0.4%;
+
+
+}
+
+.psevdo-right-div{
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 28%;
+    border-radius: 1vh 10vh 10vh 1vh;
+
+}
+
+.right-div {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    align-items: start;
+
+    border-radius: 1vh 10vh 10vh 1vh;
+    background-image: linear-gradient(to right, #00b4db, #0083b0);
+    height: 100%;
+    width: 100%;
+    animation-name: RightDiv;
+    animation-duration: 3s ;
+    animation-delay: 1.5s;
+
+}
+.h2-div{
+    width: 70%;
+    margin:0;
+    padding:0;
+    font-weight: bold;
+    font-size: 20vh;
+    font-style: italic;
+    color: white; /* fallback */
+    background: -webkit-linear-gradient(0deg, rgba(255,255,255,1), rgba(255,255,255,0), transparent 1000%);
+    background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0), transparent 1000%);
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+
+}
+.slider {
+    position: absolute;
+    overflow: hidden;
+    width: 90%;
+    height: 26%;
+    left: 100%;
+    top: 70%;
+
+}
+.slider-line {
+    right: 0;
+    transition: 0.5s;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+.slider-element, .current-item-child  {
+    background-size: contain;
+    background-position: center;
+    display: flex;
+    align-items:center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 26%;
+    box-sizing: content-box;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.current-item-child{
+    width: 100%;
+}
+.slider-element-text {
+    color: white;
+    font-weight: bold;
+    font-size: larger;
+}
+.prev-button, .next-button{
+    transform: scale(0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6vh;
+    height: 6vh;
+    clip-path: circle(40%);
+    position: absolute;
+    background-color: white;
+    left: 15%;
+    top: 75%;
+
+}
+.icon-prev, .icon-next {
+    width: 20%;
+    height: 20%;
+    background-color: black;
+    clip-path: polygon(70% 0%, 45% 50%, 70% 100%, 40% 100%, 15% 50%, 40% 0%);
+}
+.next-button {
+    left: 90%;
+
+}
+.icon-next {
+    transform: scale(-1,1);
+}
+.left-div-menu {
+    position: relative;
+    padding: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+    width: 10%;
+    border-radius: 10px;
+}
+.left-menu-button {
+    z-index: 1;
+    opacity: 0%;
+    background-color: transparent;
+    transition: 1.5s;
+    transform: scale(0);
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    background-size: 3vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 7vh;
+    height: 7vh;
+    border-radius: 2vh;
+
+
+}
+.moving-button {
+    transform: scale(0);
+    top: 11.5vh;
+    transition: 1s;
+    z-index: 0;
+    border-radius: 2vh;
+    width: 7vh;
+    height: 7vh;
+    background-size: 3vh;
+    background-color: #00b4db;
+    position: absolute;
+
+}
+.right-menu {
+
+    box-sizing: border-box;
+    padding: 7vh;
+    border-radius: 1vh 10vh 0vh 1vh;
+    display: grid;
+    grid-gap: 2vh;
+    grid-template-columns: repeat( 3, 7vh);
+    grid-template-rows: repeat( 3 , 7vh);
+    width: 100%;
+    height: 65%;
+
+}
+.right-menu-button {
+
+    opacity: 1;
+    transition: 1.5s;
+    background-size: 3vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: lightskyblue;
+    width: 7vh;
+    height: 7vh;
+    border-radius: 2vh;
+}
+.current-item {
+
+    opacity: 100%;
+    transition: 1s;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: absolute;
+    width: 25%;
+    height: 40%;
+    left: 25%;
+    top: -100%;
+    filter: drop-shadow(50px 50px 50px black);
+
+}
+
+
+
